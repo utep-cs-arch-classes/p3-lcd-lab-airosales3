@@ -12,8 +12,8 @@ typedef struct bg_st {
 
 void initBgValues(void);
 void updateBgValues(void);
-void drawBg(void);
+void drawBg(u_char x, u_char y);
 void drawMenu(void);
-void drawSprite(void);
+void drawRalsei(int height, int width, int ralsei_idle[height][width]);
 
 #endif // _DRAW_SHAPES_H_

@@ -17,12 +17,14 @@ void drawPixel(u_char col, u_char row, u_int colorBGR)
   lcd_writeColor(colorBGR);
 }
 
+
+
 void drawVerLine(u_char x, u_char y, u_int color)
 {
     while (x < screenWidth) //paint hor lines as long as y is less than the screen height
     { 
     
-    while (y < screenHeight) //If x is less than the width of the screen, paint the whole line
+    while (y < 120) //If x is less than the width of the screen, paint the whole line
     {
         drawPixel(x, y, color); //Draw a single pixel on the x and y position.  Change x to move lines
         y++;                 //Increment the y value
@@ -38,12 +40,15 @@ void drawVerLine(u_char x, u_char y, u_int color)
 
 void drawHorLine(u_char x, u_char y, u_int color)
 {
-    while (y < screenHeight) //paint hor lines as long as y is less than the screen height
+    while (y < 120) //paint hor lines as long as y is less than the screen height
     { 
     
     while (x < screenWidth) //If x is less than the width of the screen, paint the whole line
     {
-        drawPixel(x, y, color); //Draw a single pixel on the leftmost pos and y position.  Change y to move lines
+    
+        drawPixel(x, y, color); 
+        
+        //Draw a single pixel on the leftmost pos and y position.  Change y to move lines
         x++;                 //Increment the x value
     }
     
@@ -55,30 +60,7 @@ void drawHorLine(u_char x, u_char y, u_int color)
     //out of the y loop.  End of function
 }
 
-/*Draw Ralse from deltarune*/
-/*void drawRalsei(u_char width, u_char height, u_int color_1)
-{
-    int x = 0;
-    int y = 0;
-    
-    while(y < height)
-    {
-        
-        while(x < width)
-        {
-            int p = sprite_sheet[y][x];
-            if(p == 1)
-            {
-                lcd_writeColor(color_1);
-            }
-            x++;
-        }
-        y++;
-        x = 0;
-    }
-    
-}
-*/
+
 /** Fill rectangle
  *
  *  \param colMin Column start
@@ -113,6 +95,8 @@ void clearScreen(u_int colorBGR)
 /** 5x7 font - this function draws background pixels
  *  Adapted from RobG's EduKit
  */
+
+
 void drawChar5x7(u_char rcol, u_char rrow, char c, 
      u_int fgColorBGR, u_int bgColorBGR) 
 {

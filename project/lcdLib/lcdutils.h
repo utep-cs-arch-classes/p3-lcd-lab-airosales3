@@ -13,7 +13,11 @@ typedef unsigned int u_int;
 extern const unsigned char font_5x7[96][5];
 extern const unsigned char font_8x12[95][12];
 extern const unsigned int font_11x16[95][11];
-
+extern const unsigned int ralsei_idle[43][23];
+extern const unsigned int ralsei_pet[43][23];
+extern const unsigned int ralsei_defend[43][23];
+extern const unsigned int ralsei_sing[43][32];
+extern const unsigned int ralsei_fight[43][37];
 extern const unsigned int colors[43];
 
 

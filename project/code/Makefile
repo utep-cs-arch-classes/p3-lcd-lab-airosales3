@@ -1,7 +1,7 @@
 # makfile configuration
-COMMON_OBJECTS		= main.o draw_sprites.o wdtInterruptHandler.o
-CPU             	= msp430g2553
-CFLAGS          	= -mmcu=${CPU} -Os -I../h
+COMMON_OBJECTS	= switches.o moving_demo.o draw_shapes.o wdtInterruptHandler.o led.o
+CPU             = msp430g2553	
+CFLAGS          = -mmcu=${CPU} -Os -I../h
 LDFLAGS		= -L../lib -L/opt/ti/msp430_gcc/include/ 
 
 #switch the compiler (for the internal make rules)
@@ -11,7 +11,7 @@ AS              = msp430-elf-gcc -mmcu=${CPU} -c
 all: demo.elf
 
 #additional rules for files
-demo.elf: ${COMMON_OBJECTS} main.o
+demo.elf: ${COMMON_OBJECTS} moving_demo.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
 
 load: demo.elf

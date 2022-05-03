@@ -42,7 +42,7 @@ void clearScreen(u_int colorBGR);
 
 void drawHorLine(u_char x, u_char y, u_int color);
 void drawVerLine(u_char x, u_char y, u_int color);
-
+//void drawRalseiIdle(u_char height, u_char width, u_int c);
 /** Draw string at col,row
  *  Type:
  *  FONT_SM - small (5x8,) FONT_MD - medium (8x12,) FONT_LG - large (11x16)
