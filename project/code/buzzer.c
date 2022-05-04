@@ -1,6 +1,26 @@
 #include <msp430.h>
 #include "libTimer.h"
 #include "buzzer.h"
+                          
+int song_notes_pt1[46] ={C5_s,B4,A4,A4,A4,A4, //6
+                        E5,A4_s,D5,D5,D5,D5,  //6
+                        D5,A4_s,D5,E5,E5,E5,E5,//7
+                        E5,A4_s,G4,A4_s,B4, //5
+                        A4_s,A4,G4,G4,G4,F4, //6
+                        E5,A4_s,D5,D5,D5,D5, //6
+                        D5,A4_s,D5,E5,A5,A4_s,A4,B4,D5,E5 //10
+};
+
+                                             //Hold E0
+                        //0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 2 1 2 3 4
+int delay_notes_pt1[46]= {1,0,0,0,0,3,
+                          0,0,0,0,0,3,
+                          0,0,0,0,0,0,3,
+                          0,0,0,0,3,
+                          0,0,0,0,0,3,
+                          0,0,0,0,0,3,
+                          0,0,0,2,0,0,0,0,0,3
+};
 
 void buzzer_init()
 {

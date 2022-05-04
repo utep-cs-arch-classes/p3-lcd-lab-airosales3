@@ -4,6 +4,7 @@
 #include "lcddraw.h"
 #include "switches.h"
 #include "led.h"
+#include "buzzer.h"
 #include "draw_shapes.h"
 
 u_int backgroundColor = COLOR_BLUE;
@@ -15,6 +16,7 @@ void main()
   configureClocks();
   lcd_init();
   switch_p2_init();
+  buzzer_init();
   clearScreen(COLOR_BLACK);
   initBgValues();
   enableWDTInterrupts();

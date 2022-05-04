@@ -1,5 +1,5 @@
 # makfile configuration
-COMMON_OBJECTS	= switches.o moving_demo.o draw_shapes.o wdtInterruptHandler.o led.o
+COMMON_OBJECTS	= switches.o moving_demo.o draw_shapes.o wdtInterruptHandler.o buzzer.o led.o
 CPU             = msp430g2553	
 CFLAGS          = -mmcu=${CPU} -Os -I../h
 LDFLAGS		= -L../lib -L/opt/ti/msp430_gcc/include/ 
