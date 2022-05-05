@@ -1,7 +1,7 @@
 #include <msp430.h>
 #include "lcdutils.h"
 #include "lcddraw.h"
-#include "draw_shapes.h"
+#include "draw_sprites.h"
 
 background bg;
 
@@ -91,7 +91,6 @@ void drawText(int state)
 {
     u_int color_1 = COLOR_BLACK;
     u_int color_2 = COLOR_WHITE;
-    //fillRectangle(0,122,screenWidth,20,COLOR_BLACK);
     
     switch(state)
     {

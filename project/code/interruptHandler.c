@@ -4,16 +4,14 @@
 #include "lcddraw.h"
 #include "switches.h"
 #include "led.h"
-#include "draw_shapes.h"
+#include "draw_sprites.h"
+#include "state_machine.h"
 #include "buzzer.h"
 
 int state = 0;
 static u_int idle_limit = 25;
 static u_int idle_seconds = 0;
-int note_freq = 1000; //A by default I guess
-int note_delay = 4;
-int note_trans = 0; //This thing will go through the note array
-int note_duration = 0; //Note duration counter
+
 // function that handles interrupts
 // from the periodic timer
 // The timer fires an event 250 times/sec
@@ -24,63 +22,10 @@ __interrupt_vec(WDT_VECTOR) WDT()
   static u_int second_count = 0;
 
   second_count++;
+  stateCheck(state);
   drawMenu();
   drawText(state);
   
-  
-  
-  switch(state)
-  {
-      case 0:
-          drawRalsei(43,23,ralsei_idle);
-          break;
-          
-      case 1:
-          drawRalsei(43,37,ralsei_fight);
-          break;
-          
-      case 2:
-          drawRalsei(43,32,ralsei_sing);
-          
-    if (note_trans >= 46)   
-    {
-        note_trans = 0;
-    }
-    if(note_trans <= 46)
-  {
-      note_delay = delay_notes_pt1[note_trans];
-      note_freq = song_notes_pt1[note_trans];
-      
-      if(note_duration <= note_delay)
-      {
-        note_duration ++;
-        buzzer_set_period(note_freq);
-      }
-      
-      else if (note_duration > note_delay)
-      {
-      note_duration = 0;
-      note_trans++;
-      buzzer_set_period(0);
-      }
-      
-}
-
-          break;
-          
-      case 3:
-          drawRalsei(43,23,ralsei_defend);
-          break;
-          
-      case 4:
-          drawRalsei(43,23, ralsei_pet);
-          break;
-          
-      default:
-          drawRalsei(43,23,ralsei_idle);
-          break;
-}
- 
   
   if (second_count >= second_limit) //This one is in charge of the bg
   {

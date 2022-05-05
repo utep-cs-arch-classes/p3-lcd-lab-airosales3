@@ -5,7 +5,7 @@
 #include "switches.h"
 #include "led.h"
 #include "buzzer.h"
-#include "draw_shapes.h"
+#include "draw_sprites.h"
 
 u_int backgroundColor = COLOR_BLUE;
 // WARNING: LCD DISPLAY USES P1.0.  Do not touch!!! 
@@ -22,10 +22,7 @@ void main()
   enableWDTInterrupts();
   
   or_sr(0x18);	/**< CPU off , GIE on*/
-  //drawRalsei(43,23, ralsei_idle);
-  
-  
-  //Guess I will have to make an individual function for this
+
 }
 
 
