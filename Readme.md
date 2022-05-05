@@ -1,11 +1,11 @@
-# arch1-project3-lcd
+# arch1-project3-lcd: Floofy goat simulator
 
-This repository is for the computer architecture term project. For this
-project you must create a toy that utilizes the LCD display to draw shapes,
-the timer interrupts to update state over time, and buttons to change behavior.
+Hello fellow traveler! If you are here, then let me introduce to you a little fellow from a certain game called Deltarune.
+His name is Ralsei, prince of the dark.  This little guy wandered off and ended up in some sort of tamagotchi simulator, but he doesn't mind at all.
+You can make him fight, sing, defend, and you can pet the floofy boi (but don't give him doobie for goodness sake).
 
-Several demos are provided:
-* 1_shape_demo draws some simple shapes
-* 2_button_demo uses the buttons to update the display
-* 3_moving_shapes uses timer interrupts to move shapes aroudn
-* 4_wake_demo draws an hourglass and uses the buttons to change colors
+To load the floof, simply do a make all in the project folder
+Then acess the code folder and do a make load
+Oh, and you need a msp430 for this one too
+
+That's all you have to do, have fun!
